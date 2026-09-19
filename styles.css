@@ -1,0 +1,87 @@
+body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  height: 100vh;
+  width: 100vw;
+}
+
+#player-bottom-right {
+  grid-column: 3;
+  grid-row: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#card1 {
+  border: 1px solid black;
+  width: 60px;
+  height: 100px;
+
+}
+
+#player-top-right {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+#player-top-left {
+  grid-column: 1;
+  grid-row: 1;
+
+}
+
+#player-bottom-left {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+#card2,
+#card3,
+#card4 {
+  border: 1px solid black;
+  width: 60px;
+  height: 100px;
+}
+
+#center {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#central-card-one,
+#central-card-two {
+  border: 1px solid black;
+  width: 80px;
+  height: 140px;
+  margin: 0 5px;
+}
+
+#center-bottom {
+  grid-column: 2;
+  grid-row: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+#center-left {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+}
+
+#center-right {
+  grid-column: 3;
+  grid-row: 2;
+  display: flex;
+}
+
+#center-top {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+}
