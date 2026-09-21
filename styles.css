@@ -6,6 +6,11 @@ body {
   width: 100vw;
 }
 
+
+#player-choice {
+  display: none;
+}
+
 #player-bottom-right {
   grid-column: 3;
   grid-row: 3;
@@ -24,17 +29,25 @@ body {
 #player-top-right {
   grid-column: 3;
   grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #player-top-left {
   grid-column: 1;
   grid-row: 1;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #player-bottom-left {
   grid-column: 1;
   grid-row: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #card2,
@@ -66,22 +79,30 @@ body {
   grid-row: 3;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #center-left {
   grid-column: 1;
   grid-row: 2;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #center-right {
   grid-column: 3;
   grid-row: 2;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #center-top {
   grid-column: 2;
   grid-row: 1;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }

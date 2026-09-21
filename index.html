@@ -29,8 +29,24 @@
     <p>SCOREBOARD</p>
   </div>
   <div id="center-bottom">
-    <button id="pull-card">Pull</button>
-    <button id="stand">Stand</button>
+
+    <div>
+
+      <form id="game-setup">
+        <label for="rounds">Rounds</label>
+        <select id="input-rounds" , name="input_rounds"></select>
+
+        <label for="starting-balance">Balance</label>
+        <input type="number" id="input-starting-balance" name="input_starting_balance"><br>
+        <button type="submit" id="start-game">Start!</button>
+      </form>
+
+    </div>
+
+    <div id="player-choice">
+      <button id="pull-card">Pull</button>
+      <button id="stand">Stand</button>
+    </div>
   </div>
   <div id="center-left">
     <p>TABLE INFO</p>
@@ -38,7 +54,7 @@
   <div id="center-right">
     <p>IDK</p>
   </div>
-  <script src="index.js"></script>
+  <script type="module" src="index.js"></script>
 </body>
 
 

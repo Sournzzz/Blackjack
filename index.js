@@ -1,8 +1,23 @@
-const fs = require("fs")
-const deckFile = fs.readFileSync("deck.json", { encoding: 'utf8', flag: 'r' });
-const deck = JSON.parse(deckFile)
+const pullCard = document.getElementById("pull-card");
+const gameSetupForm = document.getElementById("game-setup");
+const deck = await getDeck();
 
-const pullCard = document.getElementById("pull-card")
+async function setupGame(event) {
+  event.preventDefault();
+  const setupInfo = new FormData(gameSetupForm);
+  const gameRounds = setupInfo["input_rounds"]
+  const playerBalance = setupInfo["input_starting_balance"];
+
+  const roundText = document.createElement("p");
+  const playerBalance = document.createElement("p");
+}
+
+async function getDeck() {
+  const response = await fetch('./deck.json')
+  const deck = await response.json()
+
+  return deck
+}
 
 function getCard() {
   const suits = Object.keys(deck)
@@ -47,4 +62,6 @@ function displayCard(card) {
 }
 
 pullCard.addEventListener("click", getCard)
+
+
 
