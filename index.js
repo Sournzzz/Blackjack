@@ -1,16 +1,44 @@
 const pullCard = document.getElementById("pull-card");
+
+const gameInfoPanel = document.getElementById("center-right")
+
+const playerChoiceMenu = document.getElementById("player-choice")
+const roundsInput = document.getElementById("input-rounds")
 const gameSetupForm = document.getElementById("game-setup");
+
+//THIS SECTION IS ONLY TO CREATE THE SEECTOR FOR THE NUMBER OF ROUNDS IN SETUP GAME 
+for (let i = 1; i < 11; i++) {
+  const option = document.createElement("option");
+  option.value = i;
+  option.textContent = i
+  roundsInput.appendChild(option)
+}
+// ==================================================
+
 const deck = await getDeck();
 
-async function setupGame(event) {
+
+function setupGame(event) {
   event.preventDefault();
   const setupInfo = new FormData(gameSetupForm);
-  const gameRounds = setupInfo["input_rounds"]
-  const playerBalance = setupInfo["input_starting_balance"];
+
+  const gameRounds = setupInfo.get("input_rounds");
+  const playerBalance = setupInfo.get("input_starting_balance");
 
   const roundText = document.createElement("p");
-  const playerBalance = document.createElement("p");
+  const playerBalanceText = document.createElement("p");
+
+  roundText.textContent = gameRounds
+  playerBalanceText.textContent = playerBalance
+
+  gameInfoPanel.appendChild(roundText)
+  gameInfoPanel.appendChild(playerBalanceText)
+
+  gameSetupForm.style.display = "none";
+  playerChoiceMenu.style.display = "block"
 }
+
+gameSetupForm.addEventListener("submit", setupGame)
 
 async function getDeck() {
   const response = await fetch('./deck.json')
